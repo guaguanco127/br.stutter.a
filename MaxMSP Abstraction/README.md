@@ -67,13 +67,18 @@ For a more complex version of this effect, try [br.stutter.b](https://github.com
 
 ## <a name="Use"></a>How To Use
 
-Read the "About" section and inspect each inlet of the abstraction (hover over an inlet to see what it does). The inlets are unchanged from 1.0. 
+The first two inlets are for the left and the right stereo signals. The two outlets are the left and right outputs.
 
+Every control has its own inlet. Sending a value to an inlet moves its on-screen control too, so the display always matches the sound. Hover over an inlet in Max to see the same information.
 
-
- 
-
-
-
-
-
+| Inlet | Control | Type | Range | Default |
+|---|---|---|---|---|
+| 1 | Left audio in | Signal | | |
+| 2 | Right audio in | Signal | | |
+| 3 | Stutter On/Off | Int | 0 = Off, 1 = On | 0 |
+| 4 | Retrigger | Bang |  |  |
+| 5 | Speed | Float | -32 - 32 | 1 |
+| 6 | Latent Mode | Int | 0 = Off, 1 = On | 1 |
+| 7 | Mix Mode | Int | 0 = Insert, 1 = Gate | 1 |
+| 8 | Size 1 | Float | 5 - 1000 ms | 5 |
+| 9 | Size 2 | Float | 5 - 1000 ms | 1000 |

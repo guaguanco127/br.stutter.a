@@ -21,7 +21,7 @@
 		"boxes": [
 			{
 				"box": {
-					"comment": "Size 2 (Float) 5.0 - 1000. Default is 1000.",
+					"comment": "Size 2 (Float) 5 - 1000 ms. Default 1000",
 					"id": "obj-80",
 					"index": 9,
 					"maxclass": "inlet",
@@ -40,7 +40,7 @@
 			},
 			{
 				"box": {
-					"comment": "Size 1 (Float) 5.0 - 1000. Default is 5.0",
+					"comment": "Size 1 (Float) 5 - 1000 ms. Default 5",
 					"id": "obj-79",
 					"index": 8,
 					"maxclass": "inlet",
@@ -59,7 +59,7 @@
 			},
 			{
 				"box": {
-					"comment": "Mix Mode (Int) 0 = insert, 1 = gate. Default is 0.",
+					"comment": "Mix Mode (Int) 0 = Insert, 1 = Gate. Default 1",
 					"id": "obj-64",
 					"index": 7,
 					"maxclass": "inlet",
@@ -78,7 +78,7 @@
 			},
 			{
 				"box": {
-					"comment": "Latent Mode (Int) 0 = off, 1 = on, Default is 1",
+					"comment": "Latent Mode (Int) 0 = Off, 1 = On. Default 1",
 					"id": "obj-63",
 					"index": 6,
 					"maxclass": "inlet",
@@ -97,7 +97,7 @@
 			},
 			{
 				"box": {
-					"comment": "Speed (Float) -32 to 32. Default is 1.0",
+					"comment": "Speed (Float) -32 - 32. Default 1",
 					"id": "obj-50",
 					"index": 5,
 					"maxclass": "inlet",
@@ -116,7 +116,7 @@
 			},
 			{
 				"box": {
-					"comment": "Retrigger Stutter (Bang)",
+					"comment": "Retrigger (Bang)",
 					"id": "obj-44",
 					"index": 4,
 					"maxclass": "inlet",
@@ -135,7 +135,7 @@
 			},
 			{
 				"box": {
-					"comment": "On/Off (Toggle), 0 = off, 1 = on, Default is 0",
+					"comment": "Stutter On/Off (Int) 0 = Off, 1 = On. Default 0",
 					"id": "obj-21",
 					"index": 3,
 					"maxclass": "inlet",

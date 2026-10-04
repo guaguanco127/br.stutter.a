@@ -1275,6 +1275,58 @@
 										30.0
 									]
 								}
+							},
+							{
+								"box": {
+									"id": "obj-900",
+									"maxclass": "newobj",
+									"text": "t b b",
+									"numinlets": 1,
+									"numoutlets": 2,
+									"outlettype": [
+										"bang",
+										"bang"
+									],
+									"patching_rect": [
+										50.0,
+										238.0,
+										40.0,
+										22.0
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-901",
+									"maxclass": "message",
+									"text": "clear",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										""
+									],
+									"patching_rect": [
+										155.0,
+										238.0,
+										38.0,
+										22.0
+									]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-902",
+									"maxclass": "comment",
+									"text": "Off cancels a pending latent \"on\" first (clear), then sends 0 -- otherwise switching off within the latent delay left the stutter stuck on.",
+									"numinlets": 1,
+									"numoutlets": 0,
+									"patching_rect": [
+										205.0,
+										238.0,
+										260.0,
+										47.0
+									]
+								}
 							}
 						],
 						"lines": [
@@ -1413,18 +1465,6 @@
 							{
 								"patchline": {
 									"destination": [
-										"obj-24",
-										0
-									],
-									"source": [
-										"obj-70",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
 										"obj-41",
 										0
 									],
@@ -1468,6 +1508,54 @@
 									],
 									"source": [
 										"obj-73",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-70",
+										0
+									],
+									"destination": [
+										"obj-900",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-900",
+										1
+									],
+									"destination": [
+										"obj-901",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-901",
+										0
+									],
+									"destination": [
+										"obj-41",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"source": [
+										"obj-900",
+										0
+									],
+									"destination": [
+										"obj-24",
 										0
 									]
 								}

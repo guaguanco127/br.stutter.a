@@ -82,3 +82,7 @@ Every control has its own inlet. Sending a value to an inlet moves its on-screen
 | 7 | Mix Mode | Int | 0 = Insert, 1 = Gate | 1 |
 | 8 | Size 1 | Float | 5 - 1000 ms | 5 |
 | 9 | Size 2 | Float | 5 - 1000 ms | 1000 |
+
+## <a name="Credits"></a>Credits
+
+Built around stutter~ (Cycling '74).

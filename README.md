@@ -50,3 +50,10 @@ For a more complex version of this effect, try [br.stutter.b](https://github.com
 
 **Size 2:** The second potential size timings. "Size 1" is compared with "Size 2" and a random size is chosen between these two parameters. The range is between 5 ms and 1000 ms. The default is set to 1000 ms.
 
+## <a name="Credits"></a>Credits
+
+Built around stutter~ (Cycling '74).
+
+## <a name="Credits"></a>Credits
+
+Built around stutter~ (Cycling '74).

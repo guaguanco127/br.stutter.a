@@ -1,5 +1,6 @@
 {
 	"patcher": {
+"description" : "br.stutter.a.abs.1.1 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around stutter~ (Cycling '74).",
 		"fileversion": 1,
 		"appversion": {
 			"major": 9,
@@ -19,6 +20,8 @@
 		"openinpresentation": 1,
 		"devicewidth": 120.0,
 		"boxes": [
+{"box": {"id": "obj-signature", "maxclass": "comment", "numinlets": 1, "numoutlets": 0, "patching_rect": [1017.0, 25.0, 520.0, 60.0], "text": "br.stutter.a.abs.1.1 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: built around stutter~ (Cycling '74).", "linecount": 3}},
+
 			{
 				"box": {
 					"comment": "Size 2 (Float) 5 - 1000 ms. Default 1000",
@@ -531,7 +534,7 @@
 							},
 							{
 								"box": {
-									"id": "obj-67",
+									"id": "obj-67", "hint" : "br.stutter.a.abs.1.1 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around stutter~ (Cycling '74).", "annotation" : "br.stutter.a.abs.1.1 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around stutter~ (Cycling '74).",
 									"maxclass": "number",
 									"numinlets": 1,
 									"numoutlets": 2,

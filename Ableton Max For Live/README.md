@@ -1,4 +1,4 @@
-# Ableton Max for Live device: br.stutter.a.1.1
+# Ableton Max for Live device: br.stutter.a.1.2
 
 
 
@@ -7,17 +7,23 @@ By Brian Riordan
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.stutter.a.1.1, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.a](https://github.com/guaguanco127/br.stutter.a)  
+Repository for br.stutter.a.1.2, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.a](https://github.com/guaguanco127/br.stutter.a)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
-Version 1.1 was updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
+Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Table of Contents 
 
+[What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)  
 [What is a Max for Live Device?](#M4L)  
 [How To Install](#Install)  
+
+## What's New in 1.2
+
+- Readable parameter names in Live (Stutter, Retrigger, Speed, Latent, Mix Mode, Size 1, Size 2) for automation and mapping. Sound and layout are unchanged.
+- Swapping it into an existing Live set: re-map any automation or mappings to the new parameter names.
 
 ## What's New in 1.1
 
@@ -62,7 +68,7 @@ Max For Live brings the power and flexibility of Max to Ableton Live. Max For Li
 2. For Macintosh:  
 Go to your user folder  
 Then Music > Ableton > User Library > Presets > Audio Effects  
-Copy and paste br.stutter.a.1.1.amxd into that folder
+Copy and paste br.stutter.a.1.2.amxd into that folder
 
 3. For Windows: \Users\[username]\Documents\Ableton\User Library\Presets\Audio Effects\Max Audio Effect     
   
@@ -74,6 +80,12 @@ Copy and paste br.stutter.a.1.1.amxd into that folder
 
 
  
+
+## Version History  
+
+Version 1.2 (10-09-2026) added a State outlet and an example patch to the abstraction, and readable control names.  
+Version 1.1 was updated with Max 9 (see What's New in 1.1).  
+Version 1.0 was created with Max/MSP 8.5.6.
 
 ## <a name="Credits"></a>Credits
 

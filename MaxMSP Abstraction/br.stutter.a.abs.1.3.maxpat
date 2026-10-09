@@ -1,6 +1,6 @@
 {
 	"patcher": {
-		"description": "br.stutter.a.abs.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around stutter~ (Cycling '74).",
+		"description": "br.stutter.a.abs.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around stutter~ (Cycling '74).",
 		"fileversion": 1,
 		"appversion": {
 			"major": 9,
@@ -404,7 +404,7 @@
 						520.0,
 						60.0
 					],
-					"text": "br.stutter.a.abs.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: built around stutter~ (Cycling '74).",
+					"text": "br.stutter.a.abs.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: built around stutter~ (Cycling '74).",
 					"linecount": 3
 				}
 			},
@@ -448,7 +448,7 @@
 			},
 			{
 				"box": {
-					"comment": "Mix Mode (Int) 0 = Insert, 1 = Gate. Default 1",
+					"comment": "Mix Mode (Int) 0 = Thru, 1 = Aux. Default 0",
 					"id": "obj-64",
 					"index": 7,
 					"maxclass": "inlet",
@@ -745,11 +745,11 @@
 						},
 						"valueof": {
 							"parameter_enum": [
-								"Stutter ",
-								"val2"
+								"Thru",
+								"Aux"
 							],
 							"parameter_initial": [
-								1
+								0
 							],
 							"parameter_initial_enable": 1,
 							"parameter_longname": "Mix Mode",
@@ -759,8 +759,8 @@
 							"parameter_type": 2
 						}
 					},
-					"text": "Insert",
-					"texton": "Gate",
+					"text": "Thru",
+					"texton": "Aux",
 					"varname": "Mix Mode"
 				}
 			},
@@ -921,8 +921,8 @@
 							{
 								"box": {
 									"id": "obj-67",
-									"hint": "br.stutter.a.abs.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around stutter~ (Cycling '74).",
-									"annotation": "br.stutter.a.abs.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around stutter~ (Cycling '74).",
+									"hint": "br.stutter.a.abs.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around stutter~ (Cycling '74).",
+									"annotation": "br.stutter.a.abs.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around stutter~ (Cycling '74).",
 									"maxclass": "number",
 									"numinlets": 1,
 									"numoutlets": 2,
@@ -2748,7 +2748,7 @@
 							},
 							{
 								"box": {
-									"comment": "Mix Modes, 0 = insert, 1 = gate",
+									"comment": "Mix Modes, 0 = thru, 1 = aux",
 									"id": "obj-3",
 									"index": 4,
 									"maxclass": "inlet",
@@ -3001,6 +3001,39 @@
 										30.0
 									]
 								}
+							},
+							{
+								"box": {
+									"id": "obj-mm-inv",
+									"maxclass": "newobj",
+									"numinlets": 2,
+									"numoutlets": 1,
+									"outlettype": [
+										"int"
+									],
+									"patching_rect": [
+										648.0,
+										64.0,
+										29.5,
+										22.0
+									],
+									"text": "!- 1"
+								}
+							},
+							{
+								"box": {
+									"id": "obj-mm-note",
+									"maxclass": "comment",
+									"numinlets": 1,
+									"numoutlets": 0,
+									"patching_rect": [
+										682.0,
+										64.0,
+										190.0,
+										20.0
+									],
+									"text": "0 Thru -> dry gain 1, 1 Aux -> dry gain 0"
+								}
 							}
 						],
 						"lines": [
@@ -3165,18 +3198,6 @@
 							{
 								"patchline": {
 									"destination": [
-										"obj-4",
-										0
-									],
-									"source": [
-										"obj-3",
-										0
-									]
-								}
-							},
-							{
-								"patchline": {
-									"destination": [
 										"obj-5",
 										0
 									],
@@ -3194,6 +3215,30 @@
 									],
 									"source": [
 										"obj-5",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"destination": [
+										"obj-mm-inv",
+										0
+									],
+									"source": [
+										"obj-3",
+										0
+									]
+								}
+							},
+							{
+								"patchline": {
+									"destination": [
+										"obj-4",
+										0
+									],
+									"source": [
+										"obj-mm-inv",
 										0
 									]
 								}

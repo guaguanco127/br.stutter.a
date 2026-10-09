@@ -1,5 +1,5 @@
 # Max/MSP Abstraction:   
-## br.stutter.a.1.1
+## br.stutter.a.1.2
 
 
 
@@ -8,20 +8,30 @@ By Brian Riordan
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.stutter.a.1.1, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.a](https://github.com/guaguanco127/br.stutter.a)  
+Repository for br.stutter.a.1.2, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.a](https://github.com/guaguanco127/br.stutter.a)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
-Version 1.1 was updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
+Versions 1.1 and 1.2 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Table of Contents 
 
+[What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)   
 [What is an abstraction?](#Abstraction)  
 [How To Install](#Install)  
-[How To Use](#Use) 
+[How To Use](#Use)  
+[State outlet](#State)  
+[Example Patch](#Example) 
  
  
+
+## What's New in 1.2
+
+- **State outlet** (abstraction only): a new last outlet sends every setting as a named message the moment it changes (`on`, `speed`, `latent`, `mode`, `size1`, `size2`). See [State outlet](https://github.com/guaguanco127/br.stutter.a/tree/main/MaxMSP%20Abstraction#State).
+- Every inlet and the L/R outlets are unchanged, so 1.2 swaps in for 1.1 without rewiring.
+- **New example patch:** _br.stutter.a.example.1.2 with a demo source, messages into every inlet and a State outlet tab.
+- The controls have readable names (Stutter, Retrigger, Speed, Latent, Mix Mode, Size 1, Size 2), so presets, pattr and Live's automation show them clearly.
 
 ## What's New in 1.1
 
@@ -59,15 +69,15 @@ For a more complex version of this effect, try [br.stutter.b](https://github.com
 
 1. Make sure you have Max 9 installed in your computer. And, make sure you are using a Max patch that is inside of a folder.  
 
-2. Copy and paste br.stutter.a.abs.1.1.maxpat inside of the same folder as the Max patch you are using.    
+2. Copy and paste br.stutter.a.abs.1.2.maxpat inside of the same folder as the Max patch you are using.    
 
-3. In the Max patch you are using, create an object called br.stutter.a.abs.1.1 
+3. In the Max patch you are using, create an object called br.stutter.a.abs.1.2 
 
-4. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.stutter.a.abs.1.1.maxpat located within the same folder as your project. 
+4. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.stutter.a.abs.1.2.maxpat located within the same folder as your project. 
 
 ## <a name="Use"></a>How To Use
 
-The first two inlets are for the left and the right stereo signals. The two outlets are the left and right outputs.
+The first two inlets are for the left and the right stereo signals. The first two outlets are the left and right outputs; the third is the State outlet.
 
 Every control has its own inlet. Sending a value to an inlet moves its on-screen control too, so the display always matches the sound. Hover over an inlet in Max to see the same information.
 
@@ -82,6 +92,41 @@ Every control has its own inlet. Sending a value to an inlet moves its on-screen
 | 7 | Mix Mode | Int | 0 = Insert, 1 = Gate | 1 |
 | 8 | Size 1 | Float | 5 - 1000 ms | 5 |
 | 9 | Size 2 | Float | 5 - 1000 ms | 1000 |
+
+| Outlet | Output | Type |
+|---|---|---|
+| 1 | Left Out | Signal |
+| 2 | Right Out | Signal |
+| 3 | State | Messages: `<name> <value>` (see [State outlet](#State)) |
+
+## <a name="State"></a>State outlet
+
+The last outlet sends the current settings as named messages the moment they change, for example `on 1`, `speed -1.`, `size1 50.`. Clicking a control, numbers into the inlets and preset recalls all show up; repeats are filtered out. Use it to keep a display, Mira or another patch in sync. Pick them out by name with [route on speed latent mode size1 size2], not by position, so your patch keeps working if a later version adds controls.
+
+| Name | Control | Values |
+|---|---|---|
+| on | Stutter | 0 = Off, 1 = On |
+| speed | Speed | -32 - 32 |
+| latent | Latent | 0 = Off, 1 = On |
+| mode | Mix Mode | 0 = Insert, 1 = Gate |
+| size1 | Size 1 | 5 - 1000 ms |
+| size2 | Size 2 | 5 - 1000 ms |
+
+Retrigger is a button, not a setting, so it is not reported.
+
+## <a name="Example"></a>Example Patch
+
+Open _br.stutter.a.example.1.2.maxpat (keep it in the same folder as the abstraction). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
+
+- **Source:** the demo saw plucks (220 Hz left, 330 Hz right) start when the patch opens; turn on the mic / line in 1 + 2 toggle to use your own sound.
+- **Stutter:** turn it on (panel or toggle), press Retrigger for new grains, try the Speed and Size messages.
+- **State outlet tab:** the numbers follow every setting as you change it on the panel or with the messages.
+
+## Version History  
+
+Version 1.2 (10-09-2026) added a State outlet and an example patch to the abstraction, and readable control names.  
+Version 1.1 was updated with Max 9 (see What's New in 1.1).  
+Version 1.0 was created with Max/MSP 8.5.6.
 
 ## <a name="Credits"></a>Credits
 

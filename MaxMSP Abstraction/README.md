@@ -1,5 +1,5 @@
 # Max/MSP Abstraction:   
-## br.stutter.a.1.3
+## br.stutter.a.1.4
 
 
 
@@ -8,13 +8,14 @@ guaguanco127 [at] gmail [dot] com
 brianriordanmusic [at] gmail [dot] com  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.stutter.a.1.3, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.a](https://github.com/guaguanco127/br.stutter.a)  
+Repository for br.stutter.a.1.4, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.a](https://github.com/guaguanco127/br.stutter.a)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
-Versions 1.1 through 1.3 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
+Versions 1.1 through 1.4 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Table of Contents 
 
+[What's New in 1.4](#whats-new-in-14)  
 [What's New in 1.3](#whats-new-in-13)  
 [What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
@@ -26,6 +27,13 @@ Versions 1.1 through 1.3 were updated with Max 9. Version 1.0 was created with M
 [Example Patch](#Example) 
  
  
+
+## What's New in 1.4
+
+- **Grab outlet** (abstraction only): a new last outlet sends a bang on every new grain: Retrigger, the delayed Latent grain, and switching the stutter on. Cord it to anything that should react to a new grain, such as an envelope, a sample trigger or another effect.
+- Every inlet and the other outlets are unchanged, so 1.4 swaps in for 1.3 without rewiring.
+- **Example patch fixed:** the message rows after Mix Mode were patched one inlet too low (for example, the Size 1 messages switched Mix Mode). They now reach the inlets their labels name, and a button shows the Grab outlet.
+- The Max for Live device is unchanged and stays 1.3: a device has no outlets to patch from.
 
 ## What's New in 1.3
 
@@ -76,15 +84,15 @@ For a more complex version of this effect, try [br.stutter.b](https://github.com
 
 1. Make sure you have Max 9 installed in your computer. And, make sure you are using a Max patch that is inside of a folder.  
 
-2. Copy and paste br.stutter.a.abs.1.3.maxpat inside of the same folder as the Max patch you are using.    
+2. Copy and paste br.stutter.a.abs.1.4.maxpat inside of the same folder as the Max patch you are using.    
 
-3. In the Max patch you are using, create an object called br.stutter.a.abs.1.3 
+3. In the Max patch you are using, create an object called br.stutter.a.abs.1.4 
 
-4. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.stutter.a.abs.1.3.maxpat located within the same folder as your project. 
+4. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.stutter.a.abs.1.4.maxpat located within the same folder as your project. 
 
 ## <a name="Use"></a>How To Use
 
-The first two inlets are for the left and the right stereo signals. The first two outlets are the left and right outputs; the third is the State outlet.
+The first two inlets are for the left and the right stereo signals. The first two outlets are the left and right outputs; the third is the State outlet; the fourth, Grab, bangs on every new grain.
 
 Every control has its own inlet. Sending a value to an inlet moves its on-screen control too, so the display always matches the sound. Hover over an inlet in Max to see the same information.
 
@@ -105,6 +113,7 @@ Every control has its own inlet. Sending a value to an inlet moves its on-screen
 | 1 | Left Out | Signal |
 | 2 | Right Out | Signal |
 | 3 | State | Messages: `<name> <value>` (see [State outlet](#State)) |
+| 4 | Grab | Bang: one on every new grain |
 
 ## <a name="State"></a>State outlet
 
@@ -123,14 +132,16 @@ Retrigger is a button, not a setting, so it is not reported.
 
 ## <a name="Example"></a>Example Patch
 
-Open _br.stutter.a.example.1.3.maxpat (keep it in the same folder as the abstraction). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
+Open _br.stutter.a.example.1.4.maxpat (keep it in the same folder as the abstraction). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
 
 - **Source:** the demo saw plucks (220 Hz left, 330 Hz right) start when the patch opens; turn on the mic / line in 1 + 2 toggle to use your own sound.
 - **Stutter:** turn it on (panel or toggle), press Retrigger for new grains, try the Speed and Size messages.
+- **Grab:** the button beside the panel flashes on every new grain.
 - **State outlet tab:** the numbers follow every setting as you change it on the panel or with the messages.
 
 ## Version History  
 
+Version 1.4 (10-19-2026) added the Grab outlet (a bang on every new grain) and fixed the example patch's message wiring.  
 Version 1.3 (10-09-2026) renamed Mix Mode to Thru / Aux and fixed its swapped values (Thru, 0, is now the default).  
 Version 1.2 (10-09-2026) added a State outlet and an example patch to the abstraction, and readable control names.  
 Version 1.1 was updated with Max 9 (see What's New in 1.1).  

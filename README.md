@@ -1,19 +1,20 @@
 # Max/MSP Patches, Abstractions, Externals, RNBO, VSTs, and Ableton Max for Live 
 
-## br.stutter.a.1.3
+## br.stutter.a.1.4
 
 By Brian Riordan  
 guaguanco127 [at] gmail [dot] com  
 brianriordanmusic [at] gmail [dot] com  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.stutter.a.1.3, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.a](https://github.com/guaguanco127/br.stutter.a)  
+Repository for br.stutter.a.1.4, with all related files, can be found here: [https://github.com/guaguanco127/br.stutter.a](https://github.com/guaguanco127/br.stutter.a)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
-Versions 1.1 through 1.3 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
+Versions 1.1 through 1.4 were updated with Max 9. Version 1.0 was created with Max/MSP 8.5.6. 
 
 ## Links
 
+[What's New in 1.4](#whats-new-in-14)  
 [What's New in 1.3](#whats-new-in-13)  
 [What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
@@ -21,6 +22,13 @@ Versions 1.1 through 1.3 were updated with Max 9. Version 1.0 was created with M
 [Ableton Max for Live Device](https://github.com/guaguanco127/br.stutter.a/tree/main/Ableton%20Max%20For%20Live) To use inside of Ableton Suite   
 [Max/MSP Abstraction](https://github.com/guaguanco127/br.stutter.a/tree/main/MaxMSP%20Abstraction) To use as an abstraction within Max/MSP   
 
+
+## What's New in 1.4
+
+- **Grab outlet** (abstraction only): a new last outlet sends a bang on every new grain: Retrigger, the delayed Latent grain, and switching the stutter on. Cord it to anything that should react to a new grain, such as an envelope, a sample trigger or another effect.
+- Every inlet and the other outlets are unchanged, so 1.4 swaps in for 1.3 without rewiring.
+- **Example patch fixed:** the message rows after Mix Mode were patched one inlet too low (for example, the Size 1 messages switched Mix Mode). They now reach the inlets their labels name, and a button shows the Grab outlet.
+- The Max for Live device is unchanged and stays 1.3: a device has no outlets to patch from.
 
 ## What's New in 1.3
 
@@ -68,6 +76,7 @@ For a more complex version of this effect, try [br.stutter.b](https://github.com
 
 ## Version History  
 
+Version 1.4 (10-19-2026) added the Grab outlet (a bang on every new grain) and fixed the example patch's message wiring.  
 Version 1.3 (10-09-2026) renamed Mix Mode to Thru / Aux and fixed its swapped values (Thru, 0, is now the default).  
 Version 1.2 (10-09-2026) added a State outlet and an example patch to the abstraction, and readable control names.  
 Version 1.1 was updated with Max 9 (see What's New in 1.1).  

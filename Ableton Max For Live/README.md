@@ -44,7 +44,7 @@ Versions 1.1 through 1.3 were updated with Max 9. Version 1.0 was created with M
 
 A Max for Live device that is built around the Max/MSP stutter~ object. A real-time granular glitch effect that is a signal capture buffer.
 
-For a more complex version of this effect, try [br.stutter.b](https://github.com/guaguanco127/br.stutter.b) or [br.stutter.c](https://github.com/guaguanco127/br.stutter.c)
+For a more complex version of this effect, try [br.stutter.b](https://github.com/guaguanco127/br.stutter.b), [br.stutter.c](https://github.com/guaguanco127/br.stutter.c) or [br.stutter.d](https://github.com/guaguanco127/br.stutter.d)
   
 **On/Off:** When Stutter is turned on, the signal is interrupted and a history of the signal is repeated based on the grain size. 
 
